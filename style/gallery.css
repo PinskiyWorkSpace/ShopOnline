@@ -1,0 +1,257 @@
+.gallery {
+  padding: 30px 0 91px 0;
+}
+
+.gallery__wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 245px);
+  grid-template-rows: repeat(4, 228px);
+  gap: 60px;
+  grid-template-areas:
+    "b1 b2 b3 b3 b4 b4"
+    "b5 b5 b3 b3 b6 b6"
+    "b7 b7 b7 b7 b8 b9"
+    "b7 b7 b7 b7 b8 b10";
+}
+
+.galley__block {
+  padding: 20px;
+  border-radius: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.block__text_fz30 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.block__text_fz40 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+  color: #FFFFFF;
+}
+
+.circle {
+  width: 88px;
+  height: 88px;
+  background: #FFBD13;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+  color: #FFFFFF;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.galley__block_1 {
+  display: grid;
+  align-content: end;
+  background-image: url('../image/gallery/block-1.jpg');
+  grid-area: b1;
+}
+
+.galley__block_1 span {
+  font-weight: 400;
+}
+
+.galley__block_2 {
+  display: grid;
+  align-content: end;
+  justify-items: end;
+  background-image: url('../image/gallery/block-2.jpg');
+  grid-area: b2;
+}
+
+.galley__block_3 {
+  display: grid;
+  align-content: end;
+  background-image: url('../image/gallery/block-3.jpg');
+  grid-area: b3;
+}
+
+.block_3-color {
+  background: #38C0EB;
+  border-radius: 20px;
+  padding: 24px 26px;
+}
+
+.galley__block_3 span {
+  font-weight: 700;
+  font-size: 56px;
+}
+
+.galley__block_4 {
+  background-image: url('../image/gallery/block-4.jpg');
+  grid-area: b4;
+  display: grid;
+  align-content: end;
+}
+
+.galley__block_5 {
+  background-image: url('../image/gallery/block-5.jpg');
+  grid-area: b5;
+
+}
+
+.galley__block_6 {
+  background-image: url('../image/gallery/block-6.jpg');
+  grid-area: b6;
+  display: grid;
+  align-content: end;
+  align-items: center;
+  grid-auto-flow: column
+}
+
+.galley__block_7 {
+  background-image: url('../image/gallery/block-7.jpg');
+  grid-area: b7;
+  display: grid;
+  align-content: end;
+  justify-content: start;
+  padding: 50px;
+}
+
+.block_7-color {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px 40px;
+}
+
+.block_7-color_text {
+  text-transform: uppercase;
+  color: #F91155;
+}
+
+.galley__block_8 {
+  background-image: url('../image/gallery/block-8.jpg');
+  grid-area: b8;
+  display: grid;
+  align-content: end;
+  justify-content: end;
+}
+
+.galley__block_9 {
+  background-image: url('../image/gallery/block-9.jpg');
+  grid-area: b9;
+  display: grid;
+  align-content: space-between;
+}
+
+.galley__block_10 {
+  background-image: url('../image/gallery/block-10.jpg');
+  grid-area: b10;
+}
+
+
+
+@media (max-width: 1024px) {
+  .gallery {
+    padding: 25px 0 91px 0;
+  }
+
+  .gallery__wrapper {
+    grid-template-columns: repeat(4, 217px);
+    grid-template-rows: repeat(6, 202px);
+    gap: 22px;
+    grid-template-areas:
+      "b1 b2 b3 b3"
+      "b5 b5 b3 b3"
+      "b4 b4 b8 b9"
+      "b6 b6 b8 b10"
+      "b7 b7 b7 b7"
+      "b7 b7 b7 b7";
+  }
+
+  .block__text_fz30 {
+    font-size: 24px;
+  }
+
+  .block__text_fz40 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 20px 0 65px 0;
+  }
+
+  .gallery__wrapper {
+    grid-template-columns: repeat(4, 160px);
+    grid-template-rows: repeat(6, 150px);
+    gap: 22px;
+  }
+  .galley__block {
+    padding: 10px;
+  }
+  .block__text_fz30 {
+    font-size: 16px;
+  }
+
+  .block__text_fz40 {
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .block_3-color {
+    padding: 20px 5px 20px 20px;
+  }
+  .galley__block_3 span {
+    font-size: 20px;
+  }
+  .galley__block_7 {
+    padding: 26px;
+
+  }
+  .block_7-color {
+    padding: 22px 33px;
+  }
+}
+
+@media (max-width: 320px) {
+  .gallery {
+    padding: 10px 0 43 px 0;
+  }
+
+  .gallery__wrapper {
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(9, 130px);
+    gap: 20 px;
+    grid-template-areas:
+      "b1 b2"
+      "b5 b5"
+      "b3 b3"
+      "b3 b3"
+      "b4 b4"
+      "b6 b6"
+      "b8 b9"
+      "b8 b10"
+      "b7 b7";
+  }
+  .block__text_fz30 {
+    font-size: 12px;
+  }
+
+  .block__text_fz40 {
+    font-size: 12px;
+  }
+  .galley__block_7 {
+    padding: 15px 10px;
+    justify-content: center;
+  }
+  .block_7-color {
+    padding: 7px 41px;
+    border-radius: 6px;
+  }
+}
