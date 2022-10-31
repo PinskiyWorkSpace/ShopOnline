@@ -221,13 +221,13 @@
 
 @media (max-width: 320px) {
   .gallery {
-    padding: 10px 0 43 px 0;
+    padding: 10px 0 43px 0;
   }
 
   .gallery__wrapper {
-    grid-template-columns: repeat(2, 140px);
-    grid-template-rows: repeat(9, 130px);
-    gap: 20 px;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: repeat(9, 125px);
+    gap: 20px;
     grid-template-areas:
       "b1 b2"
       "b5 b5"
