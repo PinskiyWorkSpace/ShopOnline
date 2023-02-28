@@ -1,7 +1,7 @@
 
 export const getTimeRemaining = () => {
   const timers = document.querySelector('.timer');
-  timers.dataset.deadline = '2023/02/28 11:55';
+  timers.dataset.deadline = '2023/02/28 18:55';
 
   const dateStop = new Date(timers.dataset.deadline).getTime();
   const dateNow = Date.now();
@@ -15,13 +15,7 @@ export const getTimeRemaining = () => {
   return {timeRemaining, day, hour, minutes, seconds};
 };
 
-export const formatTime = (elem) => {
-  if (elem < 10) {
-    return '0' + elem;
-  } else {
-    return elem;
-  }
-};
+export const formatTime = elem => (elem < 10) ? `0${elem}` : elem;
 
 export const declination = (num, arr) => {
 

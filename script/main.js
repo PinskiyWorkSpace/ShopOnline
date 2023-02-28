@@ -1,6 +1,6 @@
 import {
-  reander
-} from "./reander.js";
+  render
+} from "./render.js";
 import {
   getTimeRemaining,
   formatTime,
@@ -11,7 +11,7 @@ import {
 
 const timer = () => {
   const timerMain = document.querySelector('.timer');
-  reander(timerMain);
+  render(timerMain);
 
   const timerTitle = document.querySelector('.timer__title');
   const timerItem = document.querySelectorAll('.timer__item ');

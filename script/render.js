@@ -8,7 +8,7 @@ import {
   createSeconds
 } from "./create.js";
 
-export const reander = (timer) => {
+export const render = (timer) => {
   const baner = banerTitle();
 
   const wrapper = createWrapper();
