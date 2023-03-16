@@ -1,5 +1,7 @@
-.container {
+.container__blog {
   padding: 100px ;
+  width: 1650px;
+  margin: 0 auto;
 }
 
 .blog__list {
@@ -7,7 +9,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  column-gap: 200px;
   row-gap: 50px;
   margin-bottom: 100px;
 }

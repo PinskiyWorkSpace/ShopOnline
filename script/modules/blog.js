@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('.container__blog');
 
 const getData = async url => {
   const data = await fetch(url);
@@ -69,7 +69,7 @@ const paginationList = () => {
 
   ul.innerHTML = `
     <li class="pagination__item arrow">
-    <a href="#" class="pagination__link arrow__left"></a>
+    <a href="?page=${pagination.page - 1}" class="pagination__link arrow__left"></a>
     </li>
     <li class="pagination__item">
       <a href="?page=${pagination.page - 1}" class="pagination__link">${pagination.page - 1}</a>
@@ -81,7 +81,7 @@ const paginationList = () => {
       <a href="?page=${pagination.page + 1}" class="pagination__link">${pagination.page + 1}</a>
     </li>
     <li class="pagination__item arrow">
-      <a href="#" class="pagination__link arrow__rigth"></a>
+      <a href="?page=${pagination.page + 1}" class="pagination__link arrow__rigth"></a>
     </li>
   `;
 
