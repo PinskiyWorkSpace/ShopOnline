@@ -12,14 +12,14 @@ const postPage = pageParams.get('page');
 const {data,meta: {pagination}} = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
 
 
+
 const res = data.map((art, index) => {
   const li = document.createElement('li');
   li.classList.add('blog__item');
-
   li.innerHTML = `
       <img src="./image/blog/${index + 1}.jpg" alt="image" class="blog__img">
       <div class="blog__wrapper">
-        <a href="#" class="blog__link">
+        <a href="https://gorest.co.in/public-api/posts/${art.id}" class="blog__link">
           <h2 class="blog__title">${art.title}</h2>
         </a>
         <p class="blog__text">22 октября 2021, 12:45</p>
