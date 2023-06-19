@@ -1,0 +1,147 @@
+.banner {
+  padding: 45px 0 30px 0;
+
+  @media (max-width: 1024px) {
+    padding: 30px 0 25px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 25px 0 20px 0;
+  }
+
+  @media (max-width: 320px) {
+    padding: 20px 0 10px 0;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 130%;
+    color: $color-white;
+    align-self: end;
+    margin-bottom: 100px;
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+      margin-bottom: 63px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+      margin-bottom: 82px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 18px;
+      margin-bottom: 189px;
+    }
+  }
+
+
+}
+
+.hero__timer {
+  padding: 145px 0 40px 112px;
+  background-image: url('../image/banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+  display: grid;
+
+  @media (max-width: 1024px) {
+    padding: 80px 0 36px 80px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 64px 0 30px 80px;
+  }
+
+  @media (max-width: 320px) {
+    padding: 50px 25px 30px 25px;
+  }
+}
+
+.timer {
+  &__block {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    @media (max-width: 1024px) {}
+
+    @media (max-width: 768px) {}
+
+    @media (max-width: 320px) {}
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    color: $color-white;
+    text-align: center;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 8px;
+    }
+  }
+
+  &__item {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: $color-white;
+    text-align: center;
+
+    @media (max-width: 1024px) {}
+
+    @media (max-width: 768px) {}
+
+    @media (max-width: 320px) {}
+  }
+
+  &__count {
+    font-size: 60px;
+    line-height: 130%;
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 20px;
+    }
+  }
+
+  &__units {
+    font-size: 32px;
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
+  }
+}
+.hiden {
+  display: none;
+}

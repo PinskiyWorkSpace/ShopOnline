@@ -1,5 +1,5 @@
 .footer__container {
-  background: #2D2D2D;
+  background: $color-grey;
   padding: 80px 218px 80px 75px;
 }
 
@@ -21,7 +21,7 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
 }
 
 .footer__catalog__list {
@@ -29,7 +29,7 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: $color-white;
 }
 
 .footer__catalog__item {
@@ -45,14 +45,14 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
 }
 
 .footer__buyers__list {
   font-weight: 400;
   font-size: 22px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: $color-white;
 }
 
 .footer__buyers__item {
@@ -64,14 +64,14 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
 }
 
 .footer__contacts__list {
   font-weight: 400;
   font-size: 22px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: $color-white;
 }
 
 .footer__contacts__item {
@@ -94,5 +94,5 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
 }

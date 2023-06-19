@@ -16,7 +16,7 @@
   font-weight: 700;
   font-size: 70px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
   align-self: end;
   margin-bottom: 100px;
 }
@@ -31,7 +31,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
   text-align: center;
 }
 
@@ -39,7 +39,7 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 130%;
-  color: #FFFFFF;
+  color: $color-white;
   text-align: center;
 
 }

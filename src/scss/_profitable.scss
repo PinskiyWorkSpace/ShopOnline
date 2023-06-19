@@ -1,0 +1,80 @@
+.profitable {
+  padding: 50px 0 70px 0;
+
+  &__title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 130%;
+    color: $color-grey;
+    margin-bottom: 50px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 47px;
+    column-gap: 30px;
+  }
+
+  &__card {
+    width: 420px;
+  }
+}
+
+.card {
+  &__wrapper {
+    height: 295px;
+    border-radius: 14px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  &-1 {
+    background-image: url('../image/profitable/photo1.jpg');
+  }
+
+  &-2 {
+    background-image: url('../image/profitable/photo2.jpg');
+  }
+
+  &-3 {
+    background-image: url('../image/profitable/photo3.jpg');
+  }
+
+  &-4 {
+    background-image: url('../image/profitable/photo4.jpg');
+  }
+
+  &-5 {
+    background-image: url('../image/profitable/photo5.jpg');
+  }
+
+  &__price {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: $color-grey;
+  }
+}
+
+.new-price {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: $color-grey;
+  margin-right: 28px;
+}
+
+.old-price {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration-line: line-through;
+  color: $color-grey;
+}

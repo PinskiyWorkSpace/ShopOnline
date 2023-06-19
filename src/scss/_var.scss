@@ -1,0 +1,15 @@
+$color-white: #FFFFFF;
+$color-grey: #2D2D2D;
+$color-blue: #3670C7;
+
+
+
+@mixin font($name, $weight) {
+  font: {
+      family: $name;
+      weight: $weight;
+      display: swap;
+  }
+  src: url("../fonts/#{ $name }-#{ $weight }.woff2") format(woff2),
+  url("../fonts/#{ $name }-#{ $weight }.woff") format(woff)
+}

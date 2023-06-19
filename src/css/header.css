@@ -18,7 +18,7 @@
   padding: 9px 28px 12px 61px;
   font-size: 22px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: $color-white;
   background: #3670C7;
   border-radius: 10px;
   border: none;
