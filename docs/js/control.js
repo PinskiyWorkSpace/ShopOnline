@@ -1,0 +1,2 @@
+export const getTimeRemaining=()=>{const e=document.querySelector(".timer");e.dataset.deadline="2023/07/02 21:00";const t=new Date(e.dataset.deadline).getTime()-Date.now();return{timeRemaining:t,day:Math.floor(t/1e3/60/60/24),hour:Math.floor(t/1e3/60/60%24),minutes:Math.floor(t/1e3/60%60),seconds:Math.floor(t/1e3%60)}};export const formatTime=e=>e<10?`0${e}`:e;export const declination=(e,t)=>e%100>=5&&e%100<=20?t[2]:e%10==1?t[0]:e%10>=2&&e%10<=4?t[1]:t[2];
+//# sourceMappingURL=../maps/control.js.map

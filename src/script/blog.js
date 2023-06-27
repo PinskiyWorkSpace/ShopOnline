@@ -9,7 +9,7 @@ const getData = async url => {
 const pageParams = new URLSearchParams(location.search);
 const postPage = pageParams.get('page');
 
-const {data,meta: {pagination}} = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
+// const {data, meta: {pagination}} = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
 
 
 
