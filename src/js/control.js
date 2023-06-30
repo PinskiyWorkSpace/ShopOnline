@@ -32,3 +32,8 @@ export const declination = (num, arr) => {
   return arr[2];
 };
 
+const menu = document.querySelector('.menu__wrapper');
+const menuBtn = document.querySelector('.header__menu');
+menuBtn.addEventListener('click', () => {
+  menu.classList.toggle('menu__active');
+})

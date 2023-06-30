@@ -108,7 +108,7 @@ export const avif = () => gulp
   .pipe(browserSync.stream());
 
 export const critCSS = () => gulp
-  .src('dist/*.html')
+  .src('dist/index.html')
   .pipe(critical({
     base: 'dist/',
     inline: true,
