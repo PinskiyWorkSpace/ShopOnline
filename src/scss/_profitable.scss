@@ -32,23 +32,51 @@
   }
 
   &-1 {
-    background-image: url('../image/profitable/photo1.jpg');
+    background-image: -webkit-image-set(
+          url('../image/profitable/photo1.avif') type("image/avif"),
+          url('../image/profitable/photo1.webp') type("image/webp"),
+          url('../image/profitable/photo1.jpg'));
+      background-image: image-set(url('../image/profitable/photo1.avif') type("image/avif"),
+          url('../image/profitable/photo1.webp') type("image/webp"),
+          url('../image/profitable/photo1.jpg'));
   }
 
   &-2 {
-    background-image: url('../image/profitable/photo2.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo2.avif') type("image/avif"),
+          url('../image/profitable/photo2.webp') type("image/webp"),
+          url('../image/profitable/photo2.jpg'));
+      background-image: image-set(url('../image/profitable/photo2.avif') type("image/avif"),
+          url('../image/profitable/photo2.webp') type("image/webp"),
+          url('../image/profitable/photo2.jpg'));
   }
 
   &-3 {
-    background-image: url('../image/profitable/photo3.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo3.avif') type("image/avif"),
+          url('../image/profitable/photo3.webp') type("image/webp"),
+          url('../image/profitable/photo3.jpg'));
+      background-image: image-set(url('../image/profitable/photo3.avif') type("image/avif"),
+          url('../image/profitable/photo3.webp') type("image/webp"),
+          url('../image/profitable/photo3.jpg'));
   }
 
   &-4 {
     background-image: url('../image/profitable/photo4.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo4.avif') type("image/avif"),
+          url('../image/profitable/photo4.webp') type("image/webp"),
+          url('../image/profitable/photo4.jpg'));
+      background-image: image-set(url('../image/profitable/photo4.avif') type("image/avif"),
+          url('../image/profitable/photo4.webp') type("image/webp"),
+          url('../image/profitable/photo4.jpg'));
   }
 
   &-5 {
     background-image: url('../image/profitable/photo5.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo5.avif') type("image/avif"),
+          url('../image/profitable/photo5.webp') type("image/webp"),
+          url('../image/profitable/photo5.jpg'));
+      background-image: image-set(url('../image/profitable/photo5.avif') type("image/avif"),
+          url('../image/profitable/photo5.webp') type("image/webp"),
+          url('../image/profitable/photo5.jpg'));
   }
 
   &__price {

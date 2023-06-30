@@ -42,7 +42,14 @@
 
 .hero__timer {
   padding: 145px 0 40px 112px;
-  background-image: url('../image/banner.png');
+  background-image: -webkit-image-set(
+    url('../image/banner.avif') type("image/avif"),
+    url('../image/banner.webp') type("image/webp"),
+    url('../image/banner.png'));
+  background-image: image-set(
+    url('../image/banner.avif') type("image/avif"),
+    url('../image/banner.webp') type("image/webp"),
+    url('../image/banner.png'));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

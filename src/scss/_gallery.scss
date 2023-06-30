@@ -42,6 +42,7 @@
       grid-template-rows: repeat(6, 150px);
       gap: 22px;
     }
+
     @media (max-width: 320px) {
       grid-template-columns: repeat(2, 130px);
       grid-template-rows: repeat(9, 125px);
@@ -68,7 +69,12 @@
     &_1 {
       display: grid;
       align-content: end;
-      background-image: url('../image/gallery/block-1.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-1.avif') type("image/avif"),
+          url('../image/gallery/block-1.webp') type("image/webp"),
+          url('../image/gallery/block-1.jpg'));
+      background-image: image-set(url('../image/gallery/block-1.avif') type("image/avif"),
+          url('../image/gallery/block-1.webp') type("image/webp"),
+          url('../image/gallery/block-1.jpg'));
       grid-area: b1;
     }
 
@@ -80,19 +86,30 @@
       display: grid;
       align-content: end;
       justify-items: end;
-      background-image: url('../image/gallery/block-2.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-2.avif') type("image/avif"),
+          url('../image/gallery/block-2.webp') type("image/webp"),
+          url('../image/gallery/block-2.jpg'));
+      background-image: image-set(url('../image/gallery/block-2.avif') type("image/avif"),
+          url('../image/gallery/block-2.webp') type("image/webp"),
+          url('../image/gallery/block-2.jpg'));
       grid-area: b2;
     }
 
     &_3 {
       display: grid;
       align-content: end;
-      background-image: url('../image/gallery/block-3.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-3.avif') type("image/avif"),
+          url('../image/gallery/block-3.webp') type("image/webp"),
+          url('../image/gallery/block-3.jpg'));
+      background-image: image-set(url('../image/gallery/block-3.avif') type("image/avif"),
+          url('../image/gallery/block-3.webp') type("image/webp"),
+          url('../image/gallery/block-3.jpg'));
       grid-area: b3;
 
       & span {
         font-weight: 700;
         font-size: 56px;
+
         @media (max-width: 768px) {
           font-size: 20px;
         }
@@ -100,20 +117,35 @@
     }
 
     &_4 {
-      background-image: url('../image/gallery/block-4.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-4.avif') type("image/avif"),
+          url('../image/gallery/block-4.webp') type("image/webp"),
+          url('../image/gallery/block-4.jpg'));
+      background-image: image-set(url('../image/gallery/block-4.avif') type("image/avif"),
+          url('../image/gallery/block-4.webp') type("image/webp"),
+          url('../image/gallery/block-4.jpg'));
       grid-area: b4;
       display: grid;
       align-content: end;
     }
 
     &_5 {
-      background-image: url('../image/gallery/block-5.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-5.avif') type("image/avif"),
+          url('../image/gallery/block-5.webp') type("image/webp"),
+          url('../image/gallery/block-5.jpg'));
+      background-image: image-set(url('../image/gallery/block-5.avif') type("image/avif"),
+          url('../image/gallery/block-5.webp') type("image/webp"),
+          url('../image/gallery/block-5.jpg'));
       grid-area: b5;
 
     }
 
     &_6 {
-      background-image: url('../image/gallery/block-6.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-6.avif') type("image/avif"),
+          url('../image/gallery/block-6.webp') type("image/webp"),
+          url('../image/gallery/block-6.jpg'));
+      background-image: image-set(url('../image/gallery/block-6.avif') type("image/avif"),
+          url('../image/gallery/block-6.webp') type("image/webp"),
+          url('../image/gallery/block-6.jpg'));
       grid-area: b6;
       display: grid;
       align-content: end;
@@ -122,23 +154,35 @@
     }
 
     &_7 {
-      background-image: url('../image/gallery/block-7.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-7.avif') type("image/avif"),
+          url('../image/block-7.webp') type("image/webp"),
+          url('../image/gallery/banner.jpg'));
+      background-image: image-set(url('../image/gallery/block-7.avif') type("image/avif"),
+          url('../image/gallery/block-7.webp') type("image/webp"),
+          url('../image/gallery/block-7.jpg'));
       grid-area: b7;
       display: grid;
       align-content: end;
       justify-content: start;
       padding: 50px;
+
       @media (max-width: 768px) {
         padding: 26px;
       }
-      @media (max-width: 320px){
+
+      @media (max-width: 320px) {
         padding: 15px 10px;
         justify-content: center;
       }
     }
 
     &_8 {
-      background-image: url('../image/gallery/block-8.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-8.avif') type("image/avif"),
+          url('../image/gallery/block-8.webp') type("image/webp"),
+          url('../image/gallery/block-8.jpg'));
+      background-image: image-set(url('../image/gallery/block-8.avif') type("image/avif"),
+          url('../image/gallery/block-8.webp') type("image/webp"),
+          url('../image/gallery/block-8.jpg'));
       grid-area: b8;
       display: grid;
       align-content: end;
@@ -146,14 +190,24 @@
     }
 
     &_9 {
-      background-image: url('../image/gallery/block-9.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-9.avif') type("image/avif"),
+          url('../image/gallery/block-9.webp') type("image/webp"),
+          url('../image/gallery/block-9.jpg'));
+      background-image: image-set(url('../image/gallery/block-9.avif') type("image/avif"),
+          url('../image/gallery/block-9.webp') type("image/webp"),
+          url('../image/gallery/block-9.jpg'));
       grid-area: b9;
       display: grid;
       align-content: space-between;
     }
 
     &_10 {
-      background-image: url('../image/gallery/block-10.jpg');
+      background-image: -webkit-image-set(url('../image/gallery/block-10.avif') type("image/avif"),
+          url('../image/gallery/block-10.webp') type("image/webp"),
+          url('../image/gallery/block-10.jpg'));
+      background-image: image-set(url('../image/gallery/block-10.avif') type("image/avif"),
+          url('../image/gallery/block-10.webp') type("image/webp"),
+          url('../image/gallery/block-10.jpg'));
       grid-area: b10;
     }
 
@@ -178,6 +232,7 @@
     @media (max-width: 768px) {
       font-size: 16px;
     }
+
     @media (max-width: 320px) {
       font-size: 12px;
     }
@@ -196,6 +251,7 @@
     @media (max-width: 768px) {
       font-size: 16px;
     }
+
     @media (max-width: 320px) {
       font-size: 12px;
     }
@@ -219,6 +275,7 @@
     @media (max-width: 768px) {
       padding: 22px 33px;
     }
+
     @media (max-width: 320px) {
       padding: 7px 41px;
       border-radius: 6px;
