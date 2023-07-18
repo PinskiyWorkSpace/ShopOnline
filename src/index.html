@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description">
 
   <link rel="preload" href="fonts/Lato-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Lato-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -17,7 +18,7 @@
         link.href = url;
         document.head.append(link);
       };
-  
+
       createLink('css/index.css');
     });
   </script>
@@ -31,7 +32,11 @@
     <div class="container">
       <div class="header__wrapper">
         <a class="logo__link" href="#">
-          <img class="logo__img" src="image/logo.png" alt="Логотип" width="190" height="41">
+          <picture>
+            <source srcset="image/logo.avif" type="image/avif">
+            <source srcset="image/logo.webp" type="image/webp">
+            <img class="logo__img" srcset="image/logo.png" alt="Логотип" width="190" height="41">
+          </picture>
         </a>
 
         <button class="header__menu" aria-label="Кнопка меню">Меню</button>
@@ -51,7 +56,7 @@
             <p class="header__link_text">Корзина</p>
           </a>
           <a class="header__link header__link_heart" href="#" aria-label="Избранное">
-            <img class="header__img_heart" src="image/heart.svg" alt="Избранное" width="36" height="36">
+            <img class="header__img_heart" src="./image/heart.svg" alt="Избранное" width="36" height="36">
             <p class="header__link_text">Избранное</p>
           </a>
         </div>

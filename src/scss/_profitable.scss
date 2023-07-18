@@ -14,10 +14,27 @@
     flex-wrap: wrap;
     row-gap: 47px;
     column-gap: 30px;
+
+    @media (max-width: 1024px) {
+      row-gap: 40px;
+      column-gap: 20px;
+    }
   }
 
   &__card {
     width: 420px;
+
+    @media (max-width: 1024px) {
+      width: 300px;
+    }
+
+    @media (max-width: 768px) {
+      width: 220px;
+    }
+    @media (max-width: 320px) {
+      width: 130px;
+
+    }
   }
 }
 
@@ -29,6 +46,17 @@
     align-items: flex-end;
     padding: 20px;
     margin-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (max-width: 768px) {
+      height: 216px;
+    }
+    @media (max-width: 320px) {
+      height: 130px;
+      background-position: center;
+
+    }
   }
 
   &-1 {
@@ -45,9 +73,12 @@
     background-image: -webkit-image-set(url('../image/profitable/photo2.avif') type("image/avif"),
           url('../image/profitable/photo2.webp') type("image/webp"),
           url('../image/profitable/photo2.jpg'));
-      background-image: image-set(url('../image/profitable/photo2.avif') type("image/avif"),
+      background-image: image-set(
+          url('../image/profitable/photo2.avif') type("image/avif"),
           url('../image/profitable/photo2.webp') type("image/webp"),
           url('../image/profitable/photo2.jpg'));
+    background-size: auto 100%;
+    background-position: center;
   }
 
   &-3 {

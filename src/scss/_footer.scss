@@ -2,16 +2,39 @@
 	&__container {
 		background: $color-grey;
 		padding: 80px 218px 80px 75px;
+    @media (max-width: 768px) {
+      padding: 40px 34px;
+    }
 	}
 	&__wrapper {
-		display: flex;
+		display: grid;
 		margin-bottom: 50px;
+    grid-template-columns: 190px, 1fr, 1fr, 1fr;
+    grid-template-areas:
+    "logo catalog buyers contacts";
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 60px;
+      grid-template-areas:
+    "logo . ."
+    "catalog buyers contacts";
+    }
 	}
 	&__logo {
 		margin-right: 118px;
+    grid-area: logo;
+	}
+  &__logo img {
+    min-width: 190px;
+    min-height: 41px;
 	}
 	&__catalog {
 		margin-right: 98px;
+    grid-area: catalog;
+    @media (max-width: 1024px) {
+      margin-right: 75px;
+    }
 		&__title {
 			margin-bottom: 40px;
 			font-weight: 700;
@@ -25,6 +48,12 @@
 			font-size: 22px;
 			line-height: 150%;
 			color: $color-white;
+      @media (max-width: 1024px) {
+        column-count: 1;
+      }
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
 		}
 		&__item {
 			margin-bottom: 15px;
@@ -32,6 +61,7 @@
 	}
 	&__buyers {
 		margin-right: 127px;
+    grid-area: buyers;
 		&__title {
 			margin-bottom: 40px;
 			font-weight: 700;
@@ -44,30 +74,36 @@
 			font-size: 22px;
 			line-height: 150%;
 			color: $color-white;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
 		}
 		&__item {
 			margin-bottom: 15px;
 		}
 	}
-	&__contacts__title {
-		margin-bottom: 40px;
-		font-weight: 700;
-		font-size: 32px;
-		line-height: 130%;
-		color: $color-white;
-	}
-	&__contacts__list {
-		font-weight: 400;
-		font-size: 22px;
-		line-height: 150%;
-		color: $color-white;
-	}
-	&__contacts__item {
-		margin-bottom: 15px;
-	}
-	&__contacts__link:not(:last-child) {
-		margin-right: 20px;
-	}
+  &__contacts {
+    grid-area: contacts;
+    &__title {
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      color: $color-white;
+    }
+    &__list {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 150%;
+      color: $color-white;
+    }
+    &__item {
+      margin-bottom: 15px;
+    }
+    &__link:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
 }
 .copyright__wrapper {
 	display: flex;

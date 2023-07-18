@@ -11,5 +11,5 @@ $color-blue: #3670C7;
       display: swap;
   }
   src: url("../fonts/#{ $name }-#{ $weight }.woff2") format("woff2"),
-  url('../fonts/#{ $name }-#{ $weight }.woff') format("woff")
+  url("../fonts/#{ $name }-#{ $weight }.woff") format("woff")
 }
