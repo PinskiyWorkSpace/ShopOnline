@@ -1,72 +1,119 @@
 .menu {
-	&__wrapper {
-		padding: 50px 75px 92px 75px;
-        position: absolute;
-        background-color: #ffffff;
-        width: 100%;
-        display: none;
-	}
-    &__active{
-        display: flex;
-    }
-	&__catalog {
-		margin-right: 98px;
-		&__title {
-			margin-bottom: 40px;
-			font-weight: 700;
-			font-size: 32px;
-			line-height: 130%;
-			color: #2D2D2D;
-		}
-		&__list {
-			column-count: 2;
-			font-weight: 400;
-			font-size: 22px;
-			line-height: 150%;
-			color: #2D2D2D;
-		}
-		&__item {
-			margin-bottom: 15px;
-            margin-right: 83px;
-		}
-	}
-	&__buyers {
-		margin-right: 255px;
-		&__title {
-			margin-bottom: 40px;
-			font-weight: 700;
-			font-size: 32px;
-			line-height: 130%;
-			color: #2D2D2D;
-		}
-		&__list {
-			font-weight: 400;
-			font-size: 22px;
-			line-height: 150%;
-			color: #2D2D2D;
-		}
-		&__item {
-			margin-bottom: 15px;
-		}
-	}
-	&__contacts__title {
-		margin-bottom: 40px;
-		font-weight: 700;
-		font-size: 32px;
-		line-height: 130%;
-		color: #2D2D2D;
-	}
-	&__contacts__list {
-		font-weight: 400;
-		font-size: 22px;
-		line-height: 150%;
-		color: #2D2D2D;
-	}
-	&__contacts__item {
-		margin-bottom: 15px;
-	}
-	&__contacts__link:not(:last-child) {
-		margin-right: 20px;
-	}
-}
+  &__wrapper {
+    padding: 50px 75px 92px 75px;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    display: none;
+    z-index: 100;
+    left: 0;
+  }
 
+  &__active {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__catalog {
+    margin-right: 98px;
+
+    &__title {
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      color: #2D2D2D;
+
+      @media (max-width: 1024px) {
+        font-size: 26px;
+      }
+    }
+
+    &__list {
+      column-count: 2;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 150%;
+      color: #2D2D2D;
+
+      @media (max-width: 1024px) {
+        font-size: 18px;
+      }
+    }
+
+    &__item {
+      margin-bottom: 15px;
+      margin-right: 83px;
+
+      @media (max-width: 1024px) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__buyers {
+    margin-right: 255px;
+
+    @media (max-width: 1024px) {
+      margin-right: 130px;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 130%;
+      color: #2D2D2D;
+
+      @media (max-width: 1024px) {
+        font-size: 26px;
+      }
+    }
+
+    &__list {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 150%;
+      color: #2D2D2D;
+
+      @media (max-width: 1024px) {
+        font-size: 18px;
+      }
+    }
+
+    &__item {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__contacts__title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: #2D2D2D;
+
+    @media (max-width: 1024px) {
+      font-size: 26px;
+    }
+  }
+
+  &__contacts__list {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: #2D2D2D;
+
+    @media (max-width: 1024px) {
+      font-size: 18px;
+    }
+  }
+
+  &__contacts__item {
+    margin-bottom: 15px;
+  }
+
+  &__contacts__link:not(:last-child) {
+    margin-right: 20px;
+  }
+}

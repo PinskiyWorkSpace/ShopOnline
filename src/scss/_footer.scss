@@ -9,7 +9,7 @@
 	&__wrapper {
 		display: grid;
 		margin-bottom: 50px;
-    grid-template-columns: 190px, 1fr, 1fr, 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "logo catalog buyers contacts";
 
@@ -22,7 +22,6 @@
     }
 	}
 	&__logo {
-		margin-right: 118px;
     grid-area: logo;
 	}
   &__logo img {
@@ -107,8 +106,11 @@
 }
 .copyright__wrapper {
 	display: flex;
-	justify-content: space-between;
 	margin-right: 225px;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    margin-right: 0;
+  }
 }
 .copyright, .author__text, .author__link {
 	font-weight: 700;
@@ -116,3 +118,5 @@
 	line-height: 130%;
 	color: $color-white;
 }
+
+

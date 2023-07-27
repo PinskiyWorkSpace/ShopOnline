@@ -9,9 +9,18 @@ const getData = async url => {
 const pageParams = new URLSearchParams(location.search);
 const postPage = pageParams.get('page');
 
-// const {data, meta: {pagination}} = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
+const {data, meta: {pagination}} = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
 
+// const breadСrumbs = () => {
+//   const link = document.createElement('a');
+//   link.classList.add('crumbs');
+//   link.href = 'index.html';
+//   link.textContent = 'Главная';
 
+//   return link;
+// }
+
+// container.append(breadСrumbs());
 
 const res = data.map((art, index) => {
   const li = document.createElement('li');

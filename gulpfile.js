@@ -14,6 +14,8 @@ import gulpWebp from "gulp-webp";
 import gulpAvif from "gulp-avif";
 import { stream as critical } from "critical";
 import gulpIf from "gulp-if";
+import autoPrefixer from "gulp-autoprefixer";
+import babel from "gulp-babel";
 
 
 const prepros = true;
@@ -43,6 +45,7 @@ export const style = () => {
       .src('src/scss/**/*.scss')
       .pipe(gulpIf(dev, sourcemaps.init()))
       .pipe(sass().on('error', sass.logError))
+      .pipe(autoPrefixer())
       .pipe(cleanCss({
         2: {
           specialComments: 0,
@@ -58,6 +61,7 @@ export const style = () => {
     .pipe(gulpCssimport({
       extensions: ['css'],
     }))
+    .pipe(autoPrefixer())
     .pipe(cleanCss({
       2: {
         specialComments: 0,
@@ -71,7 +75,11 @@ export const style = () => {
 export const js = () => gulp
   .src('src/js/**/*.js')
   .pipe(gulpIf(dev, sourcemaps.init()))
-  .pipe(terser())
+  .pipe(babel({
+    presets: ['@babel/preset-env'],
+    ignore: ['src/js/**/*.min.js']
+  }))
+  // .pipe(terser())
   // .pipe(concat('index.min.js'))
   .pipe(gulpIf(dev, sourcemaps.write('../maps')))
   .pipe(gulp.dest('dist/js'))
@@ -155,7 +163,7 @@ export const clear = () => deleteAsync('dist/**/*', { forse: true, });
 //запуск
 
 export const develop = async() => {
-  dev = true; 
+  dev = true;
 }
 
 export const base = gulp.parallel(html, style, js, image, avif, webp, copy);
