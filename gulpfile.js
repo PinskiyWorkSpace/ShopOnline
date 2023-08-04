@@ -75,10 +75,10 @@ export const style = () => {
 export const js = () => gulp
   .src('src/js/**/*.js')
   .pipe(gulpIf(dev, sourcemaps.init()))
-  .pipe(babel({
-    presets: ['@babel/preset-env'],
-    ignore: ['src/js/**/*.min.js']
-  }))
+  // .pipe(babel({
+  //   presets: ['@babel/preset-env'],
+  //   ignore: [...allJS, 'src/js/**/*.min.js']
+  // }))
   // .pipe(terser())
   // .pipe(concat('index.min.js'))
   .pipe(gulpIf(dev, sourcemaps.write('../maps')))

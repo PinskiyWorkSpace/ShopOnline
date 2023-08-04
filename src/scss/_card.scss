@@ -1,0 +1,105 @@
+.bread {
+  &-crumbs {
+    margin-bottom: 80px;
+
+    &__list {
+      display: flex;
+      gap: 10px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child)::after {
+        content: '';
+        background-image: url('../image/card/arrow_right.svg');
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+      }
+    }
+
+    &__link {
+      color: #525252;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
+
+.card__product {}
+
+.product {
+  &__title {
+    color: #2D2D2D;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 130%;
+    margin-bottom: 69px;
+  }
+
+  &__image {
+    margin-bottom: 80px;
+  }
+
+  &__description {
+    margin-bottom: 100px;
+
+    &__title {
+      color: #2D2D2D;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 130%;
+    }
+
+    &__text {
+      color: #2D2D2D;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+}
+
+.card__block {}
+
+.block {
+  &__price {}
+
+  &__old-price {}
+
+  &__link {}
+
+  &__btn {}
+}
+
+
+.recommend {
+
+  &__title {
+    color:  #2D2D2D;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  &__wrapper {}
+
+  &__card {}
+
+  &__card-1 {}
+
+  &__card__price {}
+
+  &__card__text {}
+
+  &____wrapper {}
+}
+
+.circle {}
+
+.new-price {}
+
+.old-price {}
