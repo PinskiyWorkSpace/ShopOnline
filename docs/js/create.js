@@ -1,1 +1,81 @@
-export const banerTitle=()=>{const t=document.createElement("h1");return t.classList.add("banner__title"),t.textContent="50% на все ноутбуки",t};const createParagraf=()=>{const t=document.createElement("p");return t.classList.add("timer__item"),t},createSpan=()=>document.createElement("span");export const createWrapper=()=>{const t=document.createElement("div");return t.classList.add("timer__block"),t};export const timerTitle=()=>{const t=createParagraf();return t.classList.remove("timer__item"),t.classList.add("timer__title"),t.textContent="До конца акции:",t};export const createDay=()=>{const t=createParagraf();t.classList.add("timer__item_days");const e=createSpan();e.classList.add("timer__count","timer__count_days");const s=createSpan();return s.classList.add("timer__units","timer__units_days"),t.append(e,s),t};export const createHours=()=>{const t=createParagraf();t.classList.add("timer__item_hours");const e=createSpan();e.classList.add("timer__count","timer__count_hours");const s=createSpan();return s.classList.add("timer__units","timer__units_hours"),t.append(e,s),t};export const createMinutes=()=>{const t=createParagraf();t.classList.add("timer__item_minutes");const e=createSpan();e.classList.add("timer__count","timer__count_minutes");const s=createSpan();return s.classList.add("timer__units","timer__units_minutes"),t.append(e,s),t};export const createSeconds=()=>{const t=createParagraf();t.classList.add("timer__item_seconds");const e=createSpan();e.classList.add("timer__count","timer__count_seconds");const s=createSpan();return s.classList.add("timer__units","timer__units_seconds"),t.append(e,s),t};
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.timerTitle = exports.createWrapper = exports.createSeconds = exports.createMinutes = exports.createHours = exports.createDay = exports.banerTitle = void 0;
+var banerTitle = function banerTitle() {
+  var h1 = document.createElement('h1');
+  h1.classList.add('banner__title');
+  h1.textContent = '50% на все ноутбуки';
+  return h1;
+};
+exports.banerTitle = banerTitle;
+var createParagraf = function createParagraf() {
+  var p = document.createElement('p');
+  p.classList.add('timer__item');
+  return p;
+};
+var createSpan = function createSpan() {
+  var span = document.createElement('span');
+  return span;
+};
+var createWrapper = function createWrapper() {
+  var div = document.createElement('div');
+  div.classList.add('timer__block');
+  return div;
+};
+exports.createWrapper = createWrapper;
+var timerTitle = function timerTitle() {
+  var title = createParagraf();
+  title.classList.remove('timer__item');
+  title.classList.add('timer__title');
+  title.textContent = 'До конца акции:';
+  return title;
+};
+exports.timerTitle = timerTitle;
+var createDay = function createDay() {
+  var p = createParagraf();
+  p.classList.add('timer__item_days');
+  var spanCount = createSpan();
+  spanCount.classList.add('timer__count', 'timer__count_days');
+  var spanUnits = createSpan();
+  spanUnits.classList.add('timer__units', 'timer__units_days');
+  p.append(spanCount, spanUnits);
+  return p;
+};
+exports.createDay = createDay;
+var createHours = function createHours() {
+  var p = createParagraf();
+  p.classList.add('timer__item_hours');
+  var spanCount = createSpan();
+  spanCount.classList.add('timer__count', 'timer__count_hours');
+  var spanUnits = createSpan();
+  spanUnits.classList.add('timer__units', 'timer__units_hours');
+  p.append(spanCount, spanUnits);
+  return p;
+};
+exports.createHours = createHours;
+var createMinutes = function createMinutes() {
+  var p = createParagraf();
+  p.classList.add('timer__item_minutes');
+  var spanCount = createSpan();
+  spanCount.classList.add('timer__count', 'timer__count_minutes');
+  var spanUnits = createSpan();
+  spanUnits.classList.add('timer__units', 'timer__units_minutes');
+  p.append(spanCount, spanUnits);
+  return p;
+};
+exports.createMinutes = createMinutes;
+var createSeconds = function createSeconds() {
+  var p = createParagraf();
+  p.classList.add('timer__item_seconds');
+  var spanCount = createSpan();
+  spanCount.classList.add('timer__count', 'timer__count_seconds');
+  var spanUnits = createSpan();
+  spanUnits.classList.add('timer__units', 'timer__units_seconds');
+  p.append(spanCount, spanUnits);
+  return p;
+};
+exports.createSeconds = createSeconds;
+//# sourceMappingURL=../maps/create.js.map
