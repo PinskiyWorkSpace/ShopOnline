@@ -46,16 +46,17 @@
     align-items: flex-end;
     padding: 20px;
     margin-bottom: 20px;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
 
     @media (max-width: 768px) {
       height: 216px;
     }
     @media (max-width: 320px) {
-      height: 130px;
+      height: 90px;
       background-position: center;
-
+      margin-bottom: 10px;
+      padding: 0;
     }
   }
 
@@ -110,6 +111,46 @@
           url('../image/profitable/photo5.jpg'));
   }
 
+  &-6 {
+    background-image: url('../image/profitable/photo6.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo6.avif') type("image/avif"),
+          url('../image/profitable/photo6.webp') type("image/webp"),
+          url('../image/profitable/photo6.jpg'));
+      background-image: image-set(url('../image/profitable/photo6.avif') type("image/avif"),
+          url('../image/profitable/photo6.webp') type("image/webp"),
+          url('../image/profitable/photo6.jpg'));
+  }
+
+  &-7 {
+    background-image: url('../image/profitable/photo7.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo7.avif') type("image/avif"),
+          url('../image/profitable/photo7.webp') type("image/webp"),
+          url('../image/profitable/photo7.jpg'));
+      background-image: image-set(url('../image/profitable/photo7.avif') type("image/avif"),
+          url('../image/profitable/photo7.webp') type("image/webp"),
+          url('../image/profitable/photo7.jpg'));
+  }
+
+  &-8 {
+    background-image: url('../image/profitable/photo8.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo8.avif') type("image/avif"),
+          url('../image/profitable/photo8.webp') type("image/webp"),
+          url('../image/profitable/photo8.jpg'));
+      background-image: image-set(url('../image/profitable/photo8.avif') type("image/avif"),
+          url('../image/profitable/photo8.webp') type("image/webp"),
+          url('../image/profitable/photo8.jpg'));
+  }
+
+  &-9 {
+    background-image: url('../image/profitable/photo9.jpg');
+    background-image: -webkit-image-set(url('../image/profitable/photo9.avif') type("image/avif"),
+          url('../image/profitable/photo9.webp') type("image/webp"),
+          url('../image/profitable/photo9.jpg'));
+      background-image: image-set(url('../image/profitable/photo9.avif') type("image/avif"),
+          url('../image/profitable/photo9.webp') type("image/webp"),
+          url('../image/profitable/photo9.jpg'));
+  }
+
   &__price {
     margin-bottom: 15px;
   }
@@ -119,6 +160,9 @@
     font-size: 22px;
     line-height: 150%;
     color: $color-grey;
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -128,6 +172,9 @@
   line-height: 34px;
   color: $color-grey;
   margin-right: 28px;
+  @media (max-width: 320px) {
+    font-size: 16px;
+  }
 }
 
 .old-price {
@@ -136,4 +183,7 @@
   line-height: 24px;
   text-decoration-line: line-through;
   color: $color-grey;
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
 }
