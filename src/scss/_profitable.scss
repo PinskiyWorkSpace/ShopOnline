@@ -1,5 +1,8 @@
 .profitable {
   padding: 50px 0 70px 0;
+  @media (max-width: 320px) {
+    padding: 20px 0;
+  }
 
   &__title {
     font-weight: 700;
@@ -7,17 +10,33 @@
     line-height: 130%;
     color: $color-grey;
     margin-bottom: 50px;
+    @media (max-width: 320px) {
+      font-size: 20px;
+    }
   }
 
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     row-gap: 47px;
     column-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
 
     @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
       row-gap: 40px;
       column-gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      row-gap: 40px;
+      column-gap: 20px;
+    }
+
+    @media (max-width: 320px) {
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      row-gap: 40px;
+      column-gap: 0;
     }
   }
 
@@ -46,7 +65,7 @@
     align-items: flex-end;
     padding: 20px;
     margin-bottom: 20px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 
     @media (max-width: 768px) {
