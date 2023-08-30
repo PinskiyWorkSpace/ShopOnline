@@ -4,7 +4,7 @@ import {
   formatTime,
   declination
 } from "./control.js";
-
+import "./footer.js";
 
 
 const timer = () => {

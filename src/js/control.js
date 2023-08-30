@@ -1,7 +1,7 @@
 
 export const getTimeRemaining = () => {
   const timers = document.querySelector('.timer');
-  timers.dataset.deadline = '2023/08/01 21:00';
+  timers.dataset.deadline = '2023/09/01 21:00';
 
   const dateStop = new Date(timers.dataset.deadline).getTime();
   const dateNow = Date.now();
