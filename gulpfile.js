@@ -313,6 +313,7 @@ export const server = () => {
     notify: false,
     host: 'localhost',
     port: 3001,
+    browser: 'chrome',
     // tunnel: true,
     server: {
       baseDir: 'dist',
