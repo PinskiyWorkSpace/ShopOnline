@@ -4,11 +4,11 @@ import {
   formatTime,
   declination
 } from "./control.js";
+import "./category.js";
+import "./shop.js";
+import "./card.js";
 import "./footer.js";
 import "./blog.js";
-import "./category.js";
-import "./card.js";
-import "./shop.js";
 
 
 
