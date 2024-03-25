@@ -34,7 +34,10 @@ export const declination = (num, arr) => {
 const menu = document.querySelector('.menu__wrapper');
 const menuBtn = document.querySelector('.header__menu');
 const basketCount = document.querySelector('.basket__count');
-basketCount.textContent = JSON.parse(localStorage.getItem('bascet')).length;
+
+if(JSON.parse(localStorage.getItem('bascet'))) {
+  basketCount.textContent = JSON.parse(localStorage.getItem('bascet')).length;
+}
 
 window.addEventListener('click', ({target}) => {
   if (target.matches('.header__menu')) {
