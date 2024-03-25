@@ -1,7 +1,7 @@
 
 export const getTimeRemaining = () => {
   const timers = document.querySelector('.timer');
-  timers.dataset.deadline = '2023/09/01 21:00';
+  timers.dataset.deadline = '2023/12/29 21:00';
 
   const dateStop = new Date(timers.dataset.deadline).getTime();
   const dateNow = Date.now();
@@ -11,7 +11,6 @@ export const getTimeRemaining = () => {
   const hour = Math.floor(timeRemaining / 1000 / 60 / 60 % 24 );
   const minutes = Math.floor(timeRemaining / 1000 / 60 % 60 );
   const seconds = Math.floor(timeRemaining / 1000  % 60 );
-
   return {timeRemaining, day, hour, minutes, seconds};
 };
 
@@ -34,6 +33,15 @@ export const declination = (num, arr) => {
 
 const menu = document.querySelector('.menu__wrapper');
 const menuBtn = document.querySelector('.header__menu');
-menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('menu__active');
+const basketCount = document.querySelector('.basket__count');
+basketCount.textContent = JSON.parse(localStorage.getItem('bascet')).length;
+
+window.addEventListener('click', ({target}) => {
+  if (target.matches('.header__menu')) {
+    console.log(target.matches('.header__menu'));
+    menu.classList.toggle('menu__active');
+  }
+
 })
+
+

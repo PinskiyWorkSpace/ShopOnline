@@ -181,7 +181,10 @@
       }
     }
     &__link {
-      font-size: 10px;
+      font-size: 22px;
+      @media (max-width: 320px) {
+        font-size: 10px;
+      }
     }
     &__link:not(:last-child) {
       margin-right: 20px;

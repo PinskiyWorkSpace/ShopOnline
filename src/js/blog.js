@@ -1,20 +1,22 @@
-const container = document.querySelector('.container__blog');
+if (window.location.pathname == '/blog.html') {
 
-const getData = async url => {
-  const data = await fetch(url);
+  const container = document.querySelector('.container__blog');
 
-  return data.json();
-};
+  const getData = async url => {
+    const data = await fetch(url);
 
-const pageParams = new URLSearchParams(location.search);
-const postPage = pageParams.get('page');
+    return data.json();
+  };
 
-const {data, meta: {pagination}} = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
+  const pageParams = new URLSearchParams(location.search);
+  const postPage = pageParams.get('page');
 
-const res = data.map((art, index) => {
-  const li = document.createElement('li');
-  li.classList.add('blog__item');
-  li.innerHTML = `
+  const { data, meta: { pagination } } = await getData(`https://gorest.co.in/public-api/posts?page=${postPage}`);
+
+  const res = data.map((art, index) => {
+    const li = document.createElement('li');
+    li.classList.add('blog__item');
+    li.innerHTML = `
       <img src="./image/blog/${index + 1}.jpg" alt="image" class="blog__img">
       <div class="blog__wrapper">
         <a href="https://gorest.co.in/public-api/posts/${art.id}" class="blog__link">
@@ -47,25 +49,25 @@ const res = data.map((art, index) => {
       </div>
     `;
 
-  return li;
+    return li;
 
-});
+  });
 
-const createBlog = () => {
-  const ul = document.createElement('ul');
-  ul.classList.add('blog__list');
+  const createBlog = () => {
+    const ul = document.createElement('ul');
+    ul.classList.add('blog__list');
 
-  ul.append(...res);
-  return ul;
-};
+    ul.append(...res);
+    return ul;
+  };
 
-container.append(createBlog());
+  container.append(createBlog());
 
 
-const paginationList = () => {
-  const ul = document.querySelector('.pagination__list');
+  const paginationList = () => {
+    const ul = document.querySelector('.pagination__list');
 
-  ul.innerHTML = `
+    ul.innerHTML = `
     <li class="pagination__item arrow">
     <a href="?page=${pagination.page - 1}" class="pagination__link arrow__left"></a>
     </li>
@@ -83,8 +85,12 @@ const paginationList = () => {
     </li>
   `;
 
-  return ul;
-};
+    return ul;
+  };
 
-container.append(paginationList());
+  container.append(paginationList());
+
+}
+
+
 

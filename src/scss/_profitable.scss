@@ -42,6 +42,7 @@
 
   &__card {
     width: 420px;
+    margin-bottom: 50px;
 
     @media (max-width: 1024px) {
       width: 300px;
@@ -206,3 +207,9 @@
     font-size: 12px;
   }
 }
+
+.no-products {
+  font-size: 50px;
+  margin: 100px auto;
+}
+
