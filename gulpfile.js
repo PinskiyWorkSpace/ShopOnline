@@ -344,6 +344,6 @@ const develop = (ready) => {
 
 export const base = gulp.parallel(html, scss, js, img, svg, webp, avif, copy);
 
-export const build = gulp.series(clear, base, critCSS);
+export const buzild = gulp.series(clear, base, critCSS);
 
 export default gulp.series(develop, base, server);
