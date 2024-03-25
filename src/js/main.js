@@ -12,7 +12,7 @@ import "./blog.js";
 
 
 
-if (window.location.pathname == '/index.html') {
+if (window.location.pathname == '/ShopOnline/index.html') {
   console.log('main.html');
   const timer = () => {
     const timerMain = document.querySelector('.timer');

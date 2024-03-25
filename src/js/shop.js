@@ -1,4 +1,4 @@
-if (window.location.pathname == '/shop.html') {
+if (window.location.pathname == '/ShopOnline/shop.html') {
 
   const shop = JSON.parse(localStorage.getItem('bascet')) || [];
   console.log('shop: ', shop);
@@ -136,7 +136,7 @@ if (window.location.pathname == '/shop.html') {
 
         localStorage.setItem('bascet', JSON.stringify(shop));
       }
-      
+
     })
 
   })
