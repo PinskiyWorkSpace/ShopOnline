@@ -12,8 +12,7 @@ import "./blog.js";
 
 
 
-if (window.location.pathname == '/ShopOnline/index.html') {
-  console.log('main.html');
+if (window.location.pathname.includes('index')) {
   const timer = () => {
     const timerMain = document.querySelector('.timer');
     render(timerMain);

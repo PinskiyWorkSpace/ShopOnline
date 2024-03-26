@@ -1,6 +1,5 @@
-if (window.location.pathname == '/card.html') {
+if (window.location.pathname.includes('card')) {
 const card = JSON.parse(localStorage.getItem('card'));
-console.log('card: ', card);
 
 const title = document.querySelector('.product__title');
 const image = document.querySelector('.product__image');

@@ -1,15 +1,20 @@
-if (window.location.pathname == '/ShopOnline/shop.html') {
+if (window.location.pathname.includes('shop')) {
 
   const shop = JSON.parse(localStorage.getItem('bascet')) || [];
-  console.log('shop: ', shop);
 
   const bascetWrapper = document.querySelector('.basket__wrapper');
-  const bascetCount = document.querySelector('.basket__title-count');
+  const bascetCountTitle = document.querySelector('.basket__title-count');
+  const bascetCount = document.querySelector('.basket__count');
   const bascetReset = document.querySelector('.basket__reset');
-  const allGoods = document.querySelector('input[name="all-goods"]')
-  const bascetImage = document.querySelector('.delivery__basket--image')
+  const allGoods = document.querySelector('input[name="all-goods"]');
+  const bascetImage = document.querySelector('.delivery__basket--image');
 
-  bascetCount.textContent = shop.length;
+  const totalQuantity = document.querySelector('.total__quantity');
+  const totalResult = document.querySelector('.total__text-result');
+  const totalDiscount = document.querySelector('.total__text-discount');
+
+  bascetCountTitle.textContent = shop.length;
+  totalQuantity.textContent = shop.length;
 
   const cardGoods = (item) => {
     bascetWrapper.insertAdjacentHTML('beforeend', `
@@ -42,8 +47,8 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
           </button>
         </div>
         <div class="basket-product__price">
-          <div><span  class="basket-product__price-new">${item.price}</span>р</div>
-          <div class="basket-product__price-old">140590р</div>
+          <div><span  class="basket-product__price-new">${item.price - item.discount}</span>р</div>
+          <div class="basket-product__price-old">${item.price}р</div>
           <a href="#" class="basket-product__link">В кредит от 5600 ₽</a>
         </div>
       </div>
@@ -51,8 +56,25 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
     `)
   }
 
+  const getDiscount = () => {
+    let sum = 0;
+    shop.forEach(el => {
+      sum += +el.discount;
+    })
+    totalDiscount.textContent = sum;
+  }
+
+  const getResult = () => {
+    console.log(shop);
+    let sum = 0;
+    shop.forEach(el => {
+      sum += +el.price;
+    })
+    totalResult.textContent = sum;
+  }
+
   const bascetImg = (item) => {
-    bascetImage.insertAdjacentHTML('beforeend',`
+    bascetImage.insertAdjacentHTML('beforeend', `
     <img src="${'https://vast-boom-utensil.glitch.me/'}${item.image}" alt="Фотогравия товара в корзине" width="80" height="80">
     `);
   }
@@ -74,20 +96,31 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
   };
 
   getTotalPrice();
+  getResult()
+  getDiscount();
 
   window.addEventListener('click', ({ target }) => {
-
-    //? не знаю как правильно посчитать
 
     if (target.closest('.count__btn-more')) {
       const productWrapper = target.closest('.basket-product__wrapper');
       const countUnit = productWrapper.querySelector('.count-unit');
-
-      countUnit.textContent = ++countUnit.textContent;
-
       const productPrice = productWrapper.querySelector('.basket-product__price-new');
-      const aaa = parseInt(productPrice.textContent);
-      productPrice.textContent = aaa * countUnit.textContent;
+
+      ++countUnit.textContent;
+      ++totalQuantity.textContent;
+      ++bascetCountTitle.textContent;
+      ++bascetCount.textContent;
+
+      shop.forEach(el => {
+        if (el.id == productWrapper.dataset.id) {
+          const sum = el.price - el.discount;
+          productPrice.textContent = sum * countUnit.textContent;
+          totalDiscount.textContent = +totalDiscount.textContent + +el.discount;
+          totalResult.textContent = +totalResult.textContent + +el.price;
+        }
+      });
+
+
       getTotalPrice();
     }
 
@@ -98,10 +131,22 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
 
       if (parseInt(countUnit.textContent) > 1) {
         const productPrice = productWrapper.querySelector('.basket-product__price-new');
-        const aaa = parseInt(productPrice.textContent);
-        productPrice.textContent = aaa / countUnit.textContent;
-        countUnit.textContent = --countUnit.textContent;
+
+        --countUnit.textContent;
+        --totalQuantity.textContent;
+        --bascetCountTitle.textContent;
+        --bascetCount.textContent;
+
+        shop.forEach(el => {
+          if (el.id == productWrapper.dataset.id) {
+            const sum = el.price - el.discount;
+            productPrice.textContent = sum * countUnit.textContent;
+            totalDiscount.textContent = +totalDiscount.textContent - +el.discount;
+            totalResult.textContent = +totalResult.textContent - +el.price;
+          }
+        });
       }
+
       getTotalPrice();
     }
 
@@ -116,7 +161,7 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
       else {
         const checkboxAll = document.querySelectorAll('#product');
         checkboxAll.forEach(el => {
-        el.checked = false;
+          el.checked = false;
         })
       }
     }
@@ -136,7 +181,6 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
 
         localStorage.setItem('bascet', JSON.stringify(shop));
       }
-
     })
 
   })

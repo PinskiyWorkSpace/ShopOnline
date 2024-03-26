@@ -1,4 +1,4 @@
-if (window.location.pathname == '/ShopOnline/blog.html') {
+if (window.location.pathname.includes('blog')) {
 
   const container = document.querySelector('.container__blog');
 

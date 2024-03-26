@@ -1,7 +1,7 @@
 
 export const getTimeRemaining = () => {
   const timers = document.querySelector('.timer');
-  timers.dataset.deadline = '2023/12/29 21:00';
+  timers.dataset.deadline = '2024/04/04 21:00';
 
   const dateStop = new Date(timers.dataset.deadline).getTime();
   const dateNow = Date.now();
@@ -41,7 +41,6 @@ if(JSON.parse(localStorage.getItem('bascet'))) {
 
 window.addEventListener('click', ({target}) => {
   if (target.matches('.header__menu')) {
-    console.log(target.matches('.header__menu'));
     menu.classList.toggle('menu__active');
   }
 

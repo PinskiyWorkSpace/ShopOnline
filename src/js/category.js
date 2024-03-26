@@ -2,7 +2,6 @@ const URL = 'https://vast-boom-utensil.glitch.me/api/goods/';
 const response = await fetch(URL);
 
 const data = await response.json();
-console.log('data: ', data);
 
 const menu = document.querySelector('.menu__catalog__list');
 const main = document.querySelector('.profitable__wrapper');
@@ -55,7 +54,7 @@ window.addEventListener('click', ({ target }) => {
 });
 
 
-if (window.location.pathname == '/category.html') {
+if (window.location.pathname.includes('category')) {
 
   const categoryArr = JSON.parse(localStorage.getItem('category'));
 
