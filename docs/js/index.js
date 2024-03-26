@@ -6,7 +6,7 @@
 /***/ (function(__webpack_module__, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 __webpack_require__.a(__webpack_module__, async function (__webpack_handle_async_dependencies__, __webpack_async_result__) { try {
-if (window.location.pathname == '/ShopOnline/blog.html') {
+if (window.location.pathname.includes('blog')) {
   const container = document.querySelector('.container__blog');
   const getData = async url => {
     const data = await fetch(url);
@@ -95,9 +95,8 @@ __webpack_async_result__();
 /***/ 100:
 /***/ (function() {
 
-if (window.location.pathname == '/card.html') {
+if (window.location.pathname.includes('card')) {
   const card = JSON.parse(localStorage.getItem('card'));
-  console.log('card: ', card);
   const title = document.querySelector('.product__title');
   const image = document.querySelector('.product__image');
   const description = document.querySelector('.product__description__text');
@@ -130,7 +129,6 @@ __webpack_require__.a(__webpack_module__, async function (__webpack_handle_async
 const URL = 'https://vast-boom-utensil.glitch.me/api/goods/';
 const response = await fetch(URL);
 const data = await response.json();
-console.log('data: ', data);
 const menu = document.querySelector('.menu__catalog__list');
 const main = document.querySelector('.profitable__wrapper');
 const arr = [];
@@ -173,7 +171,7 @@ window.addEventListener('click', ({
   }
   localStorage.setItem('category', JSON.stringify(arr));
 });
-if (window.location.pathname == '/category.html') {
+if (window.location.pathname.includes('category')) {
   const categoryArr = JSON.parse(localStorage.getItem('category'));
   if (categoryArr.length < 1) {
     noProducts();
@@ -207,7 +205,7 @@ __webpack_async_result__();
 /* harmony export */ });
 const getTimeRemaining = () => {
   const timers = document.querySelector('.timer');
-  timers.dataset.deadline = '2023/12/29 21:00';
+  timers.dataset.deadline = '2024/04/04 21:00';
   const dateStop = new Date(timers.dataset.deadline).getTime();
   const dateNow = Date.now();
   const timeRemaining = dateStop - dateNow;
@@ -246,7 +244,6 @@ window.addEventListener('click', ({
   target
 }) => {
   if (target.matches('.header__menu')) {
-    console.log(target.matches('.header__menu'));
     menu.classList.toggle('menu__active');
   }
 });
@@ -288,8 +285,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_cat
 
 
 
-if (window.location.pathname == '/ShopOnline/index.html') {
-  console.log('main.html');
+if (window.location.pathname.includes('index')) {
   const timer = () => {
     const timerMain = document.querySelector('.timer');
     (0,_render_js__WEBPACK_IMPORTED_MODULE_6__/* .render */ .X)(timerMain);
@@ -438,15 +434,19 @@ const render = timer => {
 /***/ 554:
 /***/ (function() {
 
-if (window.location.pathname == '/ShopOnline/shop.html') {
+if (window.location.pathname.includes('shop')) {
   const shop = JSON.parse(localStorage.getItem('bascet')) || [];
-  console.log('shop: ', shop);
   const bascetWrapper = document.querySelector('.basket__wrapper');
-  const bascetCount = document.querySelector('.basket__title-count');
+  const bascetCountTitle = document.querySelector('.basket__title-count');
+  const bascetCount = document.querySelector('.basket__count');
   const bascetReset = document.querySelector('.basket__reset');
   const allGoods = document.querySelector('input[name="all-goods"]');
   const bascetImage = document.querySelector('.delivery__basket--image');
-  bascetCount.textContent = shop.length;
+  const totalQuantity = document.querySelector('.total__quantity');
+  const totalResult = document.querySelector('.total__text-result');
+  const totalDiscount = document.querySelector('.total__text-discount');
+  bascetCountTitle.textContent = shop.length;
+  totalQuantity.textContent = shop.length;
   const cardGoods = item => {
     bascetWrapper.insertAdjacentHTML('beforeend', `
     <div class="basket-product__wrapper" data-id="${item.id}">
@@ -478,13 +478,28 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
           </button>
         </div>
         <div class="basket-product__price">
-          <div><span  class="basket-product__price-new">${item.price}</span>р</div>
-          <div class="basket-product__price-old">140590р</div>
+          <div><span  class="basket-product__price-new">${item.price - item.discount}</span>р</div>
+          <div class="basket-product__price-old">${item.price}р</div>
           <a href="#" class="basket-product__link">В кредит от 5600 ₽</a>
         </div>
       </div>
     </div>
     `);
+  };
+  const getDiscount = () => {
+    let sum = 0;
+    shop.forEach(el => {
+      sum += +el.discount;
+    });
+    totalDiscount.textContent = sum;
+  };
+  const getResult = () => {
+    console.log(shop);
+    let sum = 0;
+    shop.forEach(el => {
+      sum += +el.price;
+    });
+    totalResult.textContent = sum;
   };
   const bascetImg = item => {
     bascetImage.insertAdjacentHTML('beforeend', `
@@ -505,18 +520,27 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
     totalSum.textContent = sum;
   };
   getTotalPrice();
+  getResult();
+  getDiscount();
   window.addEventListener('click', ({
     target
   }) => {
-    //? не знаю как правильно посчитать
-
     if (target.closest('.count__btn-more')) {
       const productWrapper = target.closest('.basket-product__wrapper');
       const countUnit = productWrapper.querySelector('.count-unit');
-      countUnit.textContent = ++countUnit.textContent;
       const productPrice = productWrapper.querySelector('.basket-product__price-new');
-      const aaa = parseInt(productPrice.textContent);
-      productPrice.textContent = aaa * countUnit.textContent;
+      ++countUnit.textContent;
+      ++totalQuantity.textContent;
+      ++bascetCountTitle.textContent;
+      ++bascetCount.textContent;
+      shop.forEach(el => {
+        if (el.id == productWrapper.dataset.id) {
+          const sum = el.price - el.discount;
+          productPrice.textContent = sum * countUnit.textContent;
+          totalDiscount.textContent = +totalDiscount.textContent + +el.discount;
+          totalResult.textContent = +totalResult.textContent + +el.price;
+        }
+      });
       getTotalPrice();
     }
     if (target.closest('.count__btn-less')) {
@@ -524,9 +548,18 @@ if (window.location.pathname == '/ShopOnline/shop.html') {
       const countUnit = productWrapper.querySelector('.count-unit');
       if (parseInt(countUnit.textContent) > 1) {
         const productPrice = productWrapper.querySelector('.basket-product__price-new');
-        const aaa = parseInt(productPrice.textContent);
-        productPrice.textContent = aaa / countUnit.textContent;
-        countUnit.textContent = --countUnit.textContent;
+        --countUnit.textContent;
+        --totalQuantity.textContent;
+        --bascetCountTitle.textContent;
+        --bascetCount.textContent;
+        shop.forEach(el => {
+          if (el.id == productWrapper.dataset.id) {
+            const sum = el.price - el.discount;
+            productPrice.textContent = sum * countUnit.textContent;
+            totalDiscount.textContent = +totalDiscount.textContent - +el.discount;
+            totalResult.textContent = +totalResult.textContent - +el.price;
+          }
+        });
       }
       getTotalPrice();
     }
