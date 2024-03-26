@@ -135,6 +135,7 @@ const arr = [];
 const createCard = (item, index) => {
   main.insertAdjacentHTML('beforeend', `
     <div class="profitable__card">
+      <a href="card.html">
             <div class="card__wrapper card${index + 1}">
               <div class="circle"> -30%</div>
             </div>
@@ -143,7 +144,8 @@ const createCard = (item, index) => {
               <span class="old-price">890₽</span>
             </div>
             <div class="card__text">${item.title}</div>
-          </div>
+      </a>
+    </div>
     `);
   const wrap = document.querySelector(`.card${index + 1}`);
   wrap.style.cssText = `
@@ -163,7 +165,6 @@ window.addEventListener('click', ({
   localStorage.removeItem('category');
   if (target.matches('.menu__catalog__link') || target.matches('.footer__catalog__link')) {
     data.forEach(item => {
-      console.log(target.innerText);
       if (item.category === target.innerText) {
         arr.push(item);
       }
@@ -185,7 +186,7 @@ if (window.location.pathname.includes('category')) {
     if (target.matches('.card__wrapper')) {
       const cardId = target.id;
       localStorage.setItem('card', JSON.stringify(categoryArr[cardId - 1]));
-      window.location.replace('/card.html');
+      // window.location.replace('/card.html')
     }
   });
 }

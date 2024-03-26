@@ -11,7 +11,7 @@ const arr = [];
 const createCard = (item, index) => {
   main.insertAdjacentHTML('beforeend', `
     <div class="profitable__card">
-      <a href="/card.html">
+      <a href="card.html">
             <div class="card__wrapper card${index + 1}">
               <div class="circle"> -30%</div>
             </div>
